@@ -42,7 +42,7 @@ import { ProjectCommitmentSectionComponent } from './project-commitment-section/
     VideoSectionComponent,
     ProjectCommitmentSectionComponent
   ],
-  entryComponents: [NgbdModalContent],
+
   imports: [
     CommonModule,
     FormsModule,
@@ -51,6 +51,8 @@ import { ProjectCommitmentSectionComponent } from './project-commitment-section/
     NouisliderModule,
     JwBootstrapSwitchNg2Module
   ],
-  exports:[ SectionsComponent ]
+  exports:[ SectionsComponent ],
+  entryComponents: [NgbdModalContent]
+
 })
 export class SectionsModule { }
