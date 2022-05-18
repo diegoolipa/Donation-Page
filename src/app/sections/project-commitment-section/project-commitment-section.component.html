@@ -1,7 +1,114 @@
-
+ 
 <div class="container-fluid" style="padding-left: 10rem; padding-right: 10rem">
     <h1 class=" font-weight-light text-center">Compromisos del Proyecto</h1>
     <small class="d-block text-uppercase font-weight-bold mb-3 text-center" >Modalidad de Donativos</small>
+    <div>
+        <button class="btn btn-icon btn-3 btn-primary float-left"
+        (click)="open(classic1, 'modal_mini', 'sm', 0)"
+        type="button">
+            <span class="btn-inner--icon"><i class="ni ni-bag-17"></i></span>
+            <span class="btn-inner--text">Donar</span>
+        </button>
+        <ng-template #classic1 let-c="close" let-d="dismiss">
+            <div class="modal-lg">
+                <div class="modal-header">
+                    <h6 class="modal-title" id="modal-title-default">REGISTRO DE DATOS</h6>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close" (click)="d('Cross click')">
+                        <span aria-hidden="true">×</span>
+                    </button>
+                </div>
+                <div class="card-body px-lg-2 py-lg-2">
+
+                    <!-- <form role="form"> -->
+                        <form #form action="https://api-lamb-pay.upeu.edu.pe/payment-online/pay" method="POST"  > 
+ 
+                            <input type="hidden" class="form-control" id="_token" name="_token" placeholder="_token" value="QoBP4ocj8TzLgZK1KntfH8pvxurJOPacrJeMgEHs">
+                            <input type="hidden" class="form-control" id="id_entidad" name="id_entidad" placeholder="id_entidad" value="7124"  >
+                            <input type="hidden" class="form-control" id="id_depto" name="id_depto" placeholder="id_depto" value="5">
+                            <input type="hidden" class="form-control" id="id_comprobante" name="id_comprobante" placeholder="id_comprobante" value="00">
+                            <input type="hidden" class="form-control" id="id_persona" name="id_persona" placeholder="id_persona" value="">
+                            <input type="hidden" class="form-control" id="ruc" name="ruc" placeholder="ruc" value="">
+                            <input type="hidden" class="form-control" id="razonsocial" name="razonsocial" placeholder="razonsocial" value="">
+                            <input type="hidden" class="form-control" id="cod_transaccion" name="cod_transaccion" placeholder="cod_transaccion" value="7471">
+                            <input type="hidden" class="form-control" id="tokens" name="tokens" placeholder="tokens" value="8c0570cd1405058b269b185c82d59a012eaf8e3dd3dab6ac698f4f500d4ca7d99389424e03ad3ed57f0fb3c1f880c9379e96">
+                            <input type="hidden" class="form-control" id="id_aplicacion" name="id_aplicacion" placeholder="id_aplicacion" value="11">
+                            <input type="hidden" class="form-control" id="id_tipoventa" name="id_tipoventa" placeholder="id_tipoventa" value="5">
+                            <input type="hidden" class="form-control" id="id_moneda" name="id_moneda" placeholder="id_moneda" value="7">
+                            <input type="hidden" class="form-control" id="id_origen" name="id_origen" placeholder="id_origen" value="">
+                            <input type="hidden" class="form-control" id="parametros" name="parametros" placeholder="parametros" value="">
+
+                        <div class="row"> 
+                            <div class="col-sm-4">
+                                <div class="form-group">
+                                    <label for="id_tipodocumento">id_tipodocumento</label>
+                                    <input type="text" class="form-control" id="id_tipodocumento" name="id_tipodocumento" placeholder="id_tipodocumento" required>
+                                </div>
+                            </div>
+                            <div class="col-sm-4">
+                                <div class="form-group">
+                                    <label for="num_documento">num_documento</label>
+                                    <input type="text" class="form-control" id="num_documento" name="num_documento" placeholder="num_documento" required>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row"> 
+                            <div class="col-sm-4">
+                                <div class="form-group">
+                                    <label for="nombre">nombre</label>
+                                    <input type="text" class="form-control" id="nombre" name="nombre" placeholder="nombre" required>
+                                </div>
+                            </div>
+                            <div class="col-sm-4">
+                                <div class="form-group">
+                                    <label for="paterno">paterno</label>
+                                    <input type="text" class="form-control" id="paterno" name="paterno" placeholder="paterno" required>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-sm-4">
+                                <div class="form-group">
+                                    <label for="materno">materno</label>
+                                    <input type="text" class="form-control" id="materno" name="materno" placeholder="materno" required>
+                                </div>
+                            </div>
+                            <div class="col-sm-4">
+                                <div class="form-group">
+                                    <label for="sexo">sexo</label>
+                                    <input type="text" class="form-control" id="sexo" name="sexo" placeholder="sexo" required>
+                                </div>
+                            </div> 
+                        </div>
+                        <div class="row"> 
+                            <div class="col-sm-4">
+                                <div class="form-group">
+                                    <label for="direccion">direccion</label>
+                                    <input type="text" class="form-control" id="direccion" name="direccion" placeholder="direccion" required>
+                                </div>
+                            </div>
+                        </div> 
+                        <div class="row"> 
+                            <div class="col-sm-4">
+                                <div class="form-group">
+                                    <label for="importe">importe</label>
+                                    <input type="text" class="form-control" id="importe" name="importe" placeholder="importe" required>
+                                </div>
+                            </div>
+                        </div>
+      
+                    
+                        <div class="modal-footer">
+                            <button type="submit" class="btn btn-success" (click)="form.submit()">Enviar</button>
+                            <button type="button" class="btn btn-link  ml-auto" data-dismiss="modal" (click)="c('Close click')">Close</button>
+                    
+                        </div>
+                    </form>
+                </div>
+
+            </div>
+
+        </ng-template>
+    </div>
     <div class="row">
 
 
@@ -14,6 +121,8 @@
                     <div>
                         <p class="card-text">Some quick example text to build on
                             the card title and make up the bulk of the card's content.</p>
+                            
+                            
                     </div>
                 </div>
                 <div class="card-body card-p">
@@ -40,30 +149,30 @@
                                     <form role="form">
                                         <div class="form-group">
                                             <label for="dni">DNI</label>
-                                            <input type="text" class="form-control" id="dni" placeholder="DNI" required>
+                                            <input type="text" class="form-control" id="dni" name="dni" placeholder="DNI" required>
                                         </div>
                                         <div class="form-group">
                                             <label for="nombres">Nombres</label>
-                                            <input type="text" class="form-control" id="nombres" placeholder="Nombres" required>
+                                            <input type="text" class="form-control" id="nombres" name="nombres" placeholder="Nombres" required>
                                         </div>
                                         <div class="form-group">
                                             <label for="apellidos">Apellidos</label>
-                                            <input type="text" class="form-control" id="apellidos" placeholder="Apellidos" required>
+                                            <input type="text" class="form-control" id="apellidos" name="apellidos" placeholder="Apellidos" required>
                                         </div>
                                         <div class="form-group">
                                             <label for="exampleInputEmail1">Email address</label>
-                                            <input type="email" class="form-control" id="exampleInputEmail1"
+                                            <input type="email" class="form-control" id="exampleInputEmail1" name="exampleInputEmail1"
                                                    aria-describedby="emailHelp" placeholder="Enter email required">
                                             <!--                                        <small id="emailHelp" class="form-text text-muted">We'll never share your email with anyone else.</small>-->
                                         </div>
                                         <div class="form-group" *ngIf="project.type==1">
                                             <label for="montoe">Monto</label>
-                                            <input type="text" class="form-control" id="montoe"
+                                            <input type="text" class="form-control" id="montoe" name="montoe"
                                                    placeholder="Monto" disabled [value]="project.cost">
                                         </div>
                                         <div class="form-group" *ngIf="project.type==2">
                                             <label for="monto">Monto</label>
-                                            <input type="text" class="form-control" id="monto"
+                                            <input type="text" class="form-control" id="monto" name="monto"
                                                    placeholder="Monto" required >
                                         </div>
 
