@@ -19,36 +19,44 @@ export class ProjectCommitmentSectionComponent implements OnInit {
   project_all: any = [
     {
       id: 1,
-      name: 'Donación Lite',
+      name: 'Donación Light',
       cost: 300.00,
-      type: 1
+      type: 1,
+      description: 'Donación '
     },
     {
       id: 2,
       name: 'Donación Básica',
       cost: 1000.00,
-      type: 1
+      type: 1,
+      description: 'Donación '
+
     },
     {
       id: 3,
       name: 'Donación Premium',
       cost: 10000.00,
-      type: 1
+      type: 1,
+      description: 'Donación '
+
     },
     {
       id: 4,
-      name: 'Donación Vip',
+      name: 'Donación VIP',
       cost: 100000.00,
-      type: 1
+      type: 1,
+      description: 'Donación '
+
     },
     {
       id: 5,
       name: 'Donación Voluntaria',
       cost: 0,
-      type: 2
+      type: 2,
+      description: 'Donación '
+
     }
   ];
-
   ngOnInit(): void {
   }
 
