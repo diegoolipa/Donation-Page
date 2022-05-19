@@ -1,18 +1,19 @@
 
-<div class="container-fluid" style="padding-left: 10rem; padding-right: 10rem">
+<div class="container-fluid" style="padding-left: 5%; padding-right: 5%">
     <h1 class=" font-weight-light text-center">Compromiso con el Proyecto</h1>
     <small class="d-block text-uppercase font-weight-bold mb-3 text-center" >Modalidad de Donativos</small>
-    <div class="row">
+    <div class="row " style="padding-top: 2%">
 
 
-        <div *ngFor="let project of project_all" class="col-xs-12 col-sm-12 col-md-12 col-lg-3">
+        <div *ngFor="let project of project_all" class="col-xs-12 col-sm-12 col-md-6 col-lg-3">
             <div class="card shadow card-dlp">
-                <img src="https://www.abogados.com.co/site/articles/cf/cd/0/43284/donaciones.jpg" class="card-img-top" alt="...">
+                <img src="https://centenariocat.upeu.edu.pe/wp-content/uploads/2022/05/SOBRE-PARA-WEB-FINAL.jpg" class="card-img-top" alt="...">
                 <div class="card-body">
                     <h4 class="card-title">{{project.name}}</h4>
-                    <p *ngIf="project.type==1" class="align-right">{{project.cost|currency:'S/.'}}</p>
+                    <h4 *ngIf="project.type==1" style="text-align: end">{{project.cost|currency:'S/.'}}</h4>
                     <p *ngIf="project.type==2" class="align-right">Registrar un monto voluntario.</p>
                     <div>
+                        <span class="card-text">Descripción:</span>
                         <p class="card-text">{{project.description}}</p>
                     </div>
                 </div>
@@ -25,7 +26,7 @@
                                 (click)="open(classic1, 'modal_mini', 'sm',project.cost)"
                                 type="button">
                             <span class="btn-inner--icon"><i class="ni ni-bag-17"></i></span>
-                            <span class="btn-inner--text">REALIZAR DONATIVO</span>
+                            <span class="btn-inner--text" >REALIZAR DONATIVO</span>
                         </button>
                         <ng-template #classic1 let-c="close"  let-d="dismiss">
                             <div class="modal-fluid">
@@ -120,11 +121,18 @@
                                         </div>
                                             <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
                                                 <div class="form-group">
-                                                    <label for="direccion">Correo</label>
+                                                    <label for="direccion">Dirección</label>
                                                     <input type="text" class="form-control" id="direccion"
-                                                           name="direccion" placeholder="Correo" required>
+                                                           name="direccion" placeholder="Dirección" required>
                                                 </div>
                                             </div>
+<!--                                        <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">-->
+<!--                                            <div class="form-group">-->
+<!--                                                <label for="email">Correo</label>-->
+<!--                                                <input type="email" class="form-control" id="email"-->
+<!--                                                       name="email" placeholder="Correo" required>-->
+<!--                                            </div>-->
+<!--                                        </div>-->
                                             <div *ngIf="project.type==1"  class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
                                                 <div class="form-group">
                                                     <label for="importe">Importe</label>
